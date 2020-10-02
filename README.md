@@ -1,5 +1,5 @@
 # Notes-App
-A Simple CLI based Notes handling app ; )
+A CLI based Notes handling app ; )
 
 ### To Set-up
    * First install node in your system.
