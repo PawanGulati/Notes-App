@@ -67,7 +67,7 @@ const saveNotes = (notes)=>{
 
 //Exportin my functions to app.js >
 module.exports = {
-    addNotes : addNotes,
-    removeNote : removeNote,
-    listNodes : listNodes
+    addNotes,
+    removeNote,
+    listNodes
 }

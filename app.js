@@ -1,6 +1,6 @@
 const yargs = require("yargs");
 const fs = require('fs');
-const notes = require("./notes");
+const{addNotes,removeNote,listNodes}= require("./notes");
 
 yargs.command({
     command:"add",
@@ -9,17 +9,17 @@ yargs.command({
         title:{
             describe:"Adding title",
             demandOption:true,
-            type:"string"
+            type:String
         },
         body:{
             describe:"Adding body of notes :: ",
             demandOption:true,
-            type:"string"
+            type:String
         }
     },
-    handler:(argv)=>{
+    handler(argv){
         // console.log(`Added notes with title "${argv.title}" which is "${argv.body}"`);
-        notes.addNotes(argv.title,argv.body);
+        addNotes(argv.title,argv.body);
     }
 });
 
@@ -32,18 +32,18 @@ yargs.command({
             demandOption:true
         }
     },
-    handler:(argv)=>{
+    handler(argv){
         // console.log("notes removed");
-        notes.removeNote(argv.title);
+        removeNote(argv.title);
     }
 });
 
 yargs.command({
     command:"list",
     describe:"listing notes",
-    handler:()=>{
+    handler(){
         // console.log("notes :: ");
-        notes.listNodes();
+        listNodes();
     }
 });
 
@@ -51,7 +51,7 @@ yargs.command({
 yargs.command({
     command:"read",
     describe:"reading notes",
-    handler:()=>{
+    handler(){
         console.log("reading ... notes");
     }
 });
